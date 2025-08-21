@@ -1,0 +1,20 @@
+### Gradle ###
+.gradle
+/build/
+.settings/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+.vscode/
+
+### macOS ###
+.DS_Store
+
+### Windows ###
+Thumbs.db
+
+
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
