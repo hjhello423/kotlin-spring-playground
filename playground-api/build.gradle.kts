@@ -1,28 +1,10 @@
-plugins {
-    kotlin("jvm")
-    kotlin("plugin.spring")
-
-    id("org.springframework.boot")
-    id("io.spring.dependency-management")
-}
-
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
-
-
 dependencies {
-    testImplementation(kotlin("test"))
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation(project(":playground-domain"))
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
+    implementation("org.springframework.boot:spring-boot-starter-web")
 
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(21)
+    // Kotest 및 테스트 관련 의존성
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:5.8.0")
+    testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
